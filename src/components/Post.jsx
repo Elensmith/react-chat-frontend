@@ -1,28 +1,28 @@
-import React from 'react'
-import { Card, Icon, Grid } from 'semantic-ui-react';
+import React from "react";
+import { Card, Icon, Grid } from "semantic-ui-react";
 
-const Post = () => {
+function Post(props) {
 
   return (
 
-    <Card color='violet'>
-      <Card.Content textAlign='left'>
-        <Card.Header content='Post Title' />
-        <Card.Description content='Today was a good day.' />
-        <Grid divided='vertically'>
+    <Card style={{ width: 450, backgroundColor: "rgba(255, 165, 0, 0.5)" }} >
+      <Card.Content style={{ paddingBottom: 0 }} textAlign="left">
+        <Card.Header content={props.post.title} />
+        <Card.Content style={{ paddingBottom: 13 }} description={props.post.text} />
+        <Grid divided="vertically">
           <Grid.Row columns={2}>
             <Grid.Column>
               <Card.Meta>
-                <span className='date'>Jake Smith</span>
+                <span className="date"></span>
               </Card.Meta>
               <Card.Meta>
-                <span className='date'>02.02.2021</span>
+                <span className="date">{props.post.createdAt}</span>
               </Card.Meta>
             </Grid.Column>
-            <Grid.Column>
-              <Card.Content textAlign='right'>
-                <span>
-                  <Icon name='like' />
+            <Grid.Column style={{ alignSelf: "flex-end" }}>
+              <Card.Content textAlign="right">
+                <span >
+                  <Icon name="like" />
             22
             </span>
               </Card.Content>
@@ -30,8 +30,8 @@ const Post = () => {
           </Grid.Row>
         </Grid>
       </Card.Content>
-    </Card>
-  )
+    </Card >
+  );
 }
 
 
